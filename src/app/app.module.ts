@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QueuesComponent } from './queues/queues.component';
 import { TaskComponent } from './task/task.component';
+import { TaskDetailComponent } from './task/task-detail/task-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QueuesComponent,
-    TaskComponent
+    TaskComponent,
+    TaskDetailComponent
   ],
   imports: [
     BrowserModule,
