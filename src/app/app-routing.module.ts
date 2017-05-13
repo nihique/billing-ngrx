@@ -6,7 +6,7 @@ import { TaskComponent } from 'app/task/task.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'queues',
+    redirectTo: 'task',
     pathMatch: 'full'
   },
   {
