@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     children: []
-  }
+  },
 ];
 
 @NgModule({
