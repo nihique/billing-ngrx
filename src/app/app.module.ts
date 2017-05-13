@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QueuesComponent } from './queues/queues.component';
+import { TaskComponent } from './task/task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QueuesComponent
+    QueuesComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
