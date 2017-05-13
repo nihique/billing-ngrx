@@ -9,6 +9,9 @@ import { QueuesComponent } from './queues/queues.component';
 import { TaskComponent } from './task/task.component';
 import { TaskDetailComponent } from './task/task-detail/task-detail.component';
 import { TaskToolbarComponent } from './task/task-toolbar/task-toolbar.component';
+import { BillingZoneShellComponent } from './config/billing-zones/billing-zone-shell/billing-zone-shell.component';
+import { BillingZoneListComponent } from './config/billing-zones/billing-zone-list/billing-zone-list.component';
+import { BillingZoneDetailComponent } from './config/billing-zones/billing-zone-detail/billing-zone-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { TaskToolbarComponent } from './task/task-toolbar/task-toolbar.component
     QueuesComponent,
     TaskComponent,
     TaskDetailComponent,
-    TaskToolbarComponent
+    TaskToolbarComponent,
+    BillingZoneShellComponent,
+    BillingZoneListComponent,
+    BillingZoneDetailComponent
   ],
   imports: [
     BrowserModule,
