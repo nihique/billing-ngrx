@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { QueuesComponent } from './queues/queues.component';
 import { TaskComponent } from './task/task.component';
 import { TaskDetailComponent } from './task/task-detail/task-detail.component';
+import { TaskToolbarComponent } from './task/task-toolbar/task-toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QueuesComponent,
     TaskComponent,
-    TaskDetailComponent
+    TaskDetailComponent,
+    TaskToolbarComponent
   ],
   imports: [
     BrowserModule,
