@@ -7,7 +7,7 @@ import { BillingZoneShellComponent } from "app/config/billing-zones/billing-zone
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'config/billing-zones',
+    redirectTo: 'queues',
     pathMatch: 'full'
   },
   {

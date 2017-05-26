@@ -1,35 +1,23 @@
-<div id="billingModuleMainPage" class="billing">
-    <div class="row margin-bottom-1em">
-
-        <!-- Breadcrumbs -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div ncy-breadcrumb></div>
-            <!--<ul>
-                <li><a routerLink='/queues'>Queues</a></li>
-                <li><a routerLink='/task'>Task</a></li>
-            </ul>-->
-        </div>
-
-        <!-- User Messages -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <!--<user-messages></user-messages>-->
-        </div>
-
-        <!-- Left Toolbar -->
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <!--<ui-view name="lefttoolbar"></ui-view>-->
-        </div>
-
-
-        <!-- Right Toolbar -->
-        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-            <div class="pull-right">
-                <!--<ui-view name="righttoolbar"></ui-view>-->
+﻿<div id="billingModuleMainPage" class="billing">
+    <div class="toolbar">
+        <div name="lefttoolbar" class="lefttoolbar"></div>
+        <div class="breadcrumtoolbar toolbar-item">
+            <div class="breadcrumtoolbar toolbar-item">
+                <ol class="breadcrumb ng-isolate-scope">
+                    <li>
+                        <a routerLink="/queues">Billing</a>
+                    </li>
+                    <li>
+                        <a routerLink="/task">Task</a>
+                    </li>
+                    <li>
+                        <a routerLink="/config/billing-zones">Billing Zones</a>
+                    </li>
+                </ol>
             </div>
         </div>
+        <div name="righttoolbar" class="righttoolbar"></div>
     </div>
-
-    <!-- Main content -->
-    <router-outlet></router-outlet>
-
+    <div class="user-messages"></div>
+    <router-outlet class="main"></router-outlet>
 </div>
