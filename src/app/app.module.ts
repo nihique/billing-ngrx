@@ -12,10 +12,12 @@ import { TaskToolbarComponent } from './task/task-toolbar/task-toolbar.component
 import { BillingZoneShellComponent } from './config/billing-zones/billing-zone-shell/billing-zone-shell.component';
 import { BillingZoneListComponent } from './config/billing-zones/billing-zone-list/billing-zone-list.component';
 import { BillingZoneDetailComponent } from './config/billing-zones/billing-zone-detail/billing-zone-detail.component';
+import { BreadcrumbComponent } from "app/common/breadcrumb/breadcrumb.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    BreadcrumbComponent,
     QueuesComponent,
     TaskComponent,
     TaskDetailComponent,
