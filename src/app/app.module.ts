@@ -13,6 +13,7 @@ import { BillingZoneShellComponent } from './config/billing-zones/billing-zone-s
 import { BillingZoneListComponent } from './config/billing-zones/billing-zone-list/billing-zone-list.component';
 import { BillingZoneDetailComponent } from './config/billing-zones/billing-zone-detail/billing-zone-detail.component';
 import { BreadcrumbComponent } from "app/common/breadcrumb/breadcrumb.component";
+import { MainToolbarComponent } from "app/common/main-toolbar/main-toolbar.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BreadcrumbComponent } from "app/common/breadcrumb/breadcrumb.component"
     TaskToolbarComponent,
     BillingZoneShellComponent,
     BillingZoneListComponent,
-    BillingZoneDetailComponent
+    BillingZoneDetailComponent,
+    MainToolbarComponent,
   ],
   imports: [
     BrowserModule,
