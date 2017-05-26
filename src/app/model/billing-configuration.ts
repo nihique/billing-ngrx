@@ -1,9 +1,9 @@
 export interface IBillingConfiguration {
-    globals: IGlobalConfiguration
+    globals: IGlobalConfiguration;
 }
 
 export interface IGlobalConfiguration {
-    dateFormat: string,
-    maxItemsPerPage: number,
-    timeFormat: string,
+    dateFormat: string;
+    maxItemsPerPage: number;
+    timeFormat: string;
 }

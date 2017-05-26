@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { QueuesComponent } from 'app/queues/queues.component';
-import { TaskComponent } from 'app/task/task.component';
-import { BillingZoneShellComponent } from "app/config/billing-zones/billing-zone-shell/billing-zone-shell.component";
+import { TaskShellComponent } from 'app/task/task-shell.component';
+import { BillingZoneShellComponent } from 'app/config/billing-zones/billing-zone-shell/billing-zone-shell.component';
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'task',
-    component: TaskComponent,
+    component: TaskShellComponent,
   },
   {
     path: 'config/billing-zones',

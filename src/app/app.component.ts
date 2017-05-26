@@ -9,9 +9,7 @@ import { IBillingConfiguration } from 'app/model/billing-configuration';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
     configuration: IBillingConfiguration;
-    title = 'app works!';
 
     constructor(
         private billingApiClient: BillingApiClient,
@@ -19,7 +17,7 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.configuration = this.billingApiClient
+        this.billingApiClient
             .getConfiguration()
             .subscribe(x => this.configuration = x);
     }

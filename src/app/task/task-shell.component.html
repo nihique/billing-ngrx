@@ -1,0 +1,15 @@
+<div class="heading">
+    <h2>
+        <span *ngIf="taskMode === 'new'">New</span>
+        <span *ngIf="taskMode === 'edit'"></span>
+        <span *ngIf="taskMode === 'config'">Task Configuration</span>
+        <span *ngIf="taskMode !== 'config'">{{taskTypeName}}</span>
+    </h2>
+    <task-toolbar></task-toolbar>
+</div>
+
+<div class="row">
+    <task-detail task="$ctrl.task"></task-detail>
+</div>
+
+<!--<task-toolbar></task-toolbar>-->

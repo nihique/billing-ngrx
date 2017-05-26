@@ -1,55 +1,51 @@
-<div class="col-md-12"
-     ng-if="$ctrl.taskDetail.taskMode !== 'config'">
-    <div class="pull-right margin-bottom-1em">
-        <div class="btn-group"
-             ng-if="$ctrl.tasksLookups.length"
-             uib-dropdown>
-            <button type="button"
-                    class="btn btn-default related-tasks-button"
-                    uib-dropdown-toggle
-                    >
-                <i class="fa fa-fw fa-link"></i>
-                Related Tasks
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu related-tasks-list" uib-dropdown-menu>
-                <li ng-repeat="t in $ctrl.tasksLookups">
-                    <a class="related-task-link" ng-click="$ctrl.taskDetail.goToTask(t.id)">
-                        [[t.nameFormatted]]
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <button id="cancelNewTask"
-                class="btn btn-default"
-                ng-click="$ctrl.taskDetail.cancel()">
-            <i class="fa fa-chevron-left"></i>
-            Back
+<div *ngIf="taskMode !== 'config'" class="pull-right">
+    <div class="btn-group"
+            *ngIf="tasksLookups.length"
+            uib-dropdown>
+        <button type="button"
+                class="btn btn-default related-tasks-button"
+                uib-dropdown-toggle>
+            <i class="fa fa-fw fa-link"></i>
+            Related Tasks
+            <span class="caret"></span>
         </button>
-        <button id="saveAndCloseTaskButton"
-                class="btn btn-primary"
-                ng-click="$ctrl.taskDetail.saveTask(true)">
-            <i class="fa fa-save"></i>
-            Save and Back
-        </button>
+        <ul class="dropdown-menu related-tasks-list" uib-dropdown-menu>
+            <li ng-repeat="t in ::$ctrl.tasksLookups">
+                <a class="related-task-link"
+                    ng-click="$ctrl.taskShell.goToTask(t.id)">
+                    {{nameFormatted}}
+                </a>
+            </li>
+        </ul>
     </div>
+    <button id="cancelNewTask"
+            class="btn btn-default"
+            ng-click="$ctrl.taskShell.cancel()">
+        <i class="fa fa-chevron-left"></i>
+        Back
+    </button>
+    <button id="saveAndCloseTaskButton"
+            class="btn btn-primary"
+            ng-click="$ctrl.taskShell.saveTask(true)">
+        <i class="fa fa-save"></i>
+        Save and Back
+    </button>
 </div>
 
-<!--<div class="col-md-12"
-     ng-if="$ctrl.taskDetail.taskMode === 'config'">
-    <div class="pull-right margin-bottom-1em">
+<div *ngIf="taskMode === 'config'">
+    <div class="pull-right">
         <button class="btn btn-default field-configuration"
-                ng-disabled="!$ctrl.taskDetail.selectedField"
-                ng-click="$ctrl.taskDetail.openFieldConfigurationModal()">
+                ng-disabled="!$ctrl.taskShell.selectedField"
+                ng-click="$ctrl.taskShell.openFieldConfigurationModal()">
             <i class="fa fa-cog"></i>
             Field Configuration
         </button>
         <a
            id="backToBillingMainPageLink"
            class="btn btn-primary back"
-           ng-click="$ctrl.taskDetail.cancel()">
+           ng-click="$ctrl.taskShell.cancel()">
             <i class="fa fa-chevron-left"></i>
             Back
         </a>
     </div>
-</div>-->
+</div>
