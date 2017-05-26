@@ -1,0 +1,6 @@
+{
+  "/LogisWeb.Frame.New": {
+    "target": "http://localhost",
+    "secure": false
+  }
+}
