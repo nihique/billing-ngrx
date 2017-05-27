@@ -14,6 +14,7 @@ import { MainToolbarComponent } from 'app/common/main-toolbar/main-toolbar.compo
 import { BillingApiClient } from 'app/common/billing-api-client.service';
 import { TaskShellComponent } from 'app/task/task-shell.component';
 import { TfTaskComponent } from 'app/task/tf-task/tf-task.component';
+import { StateService } from 'app/state.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TfTaskComponent } from 'app/task/tf-task/tf-task.component';
     AppRoutingModule
   ],
   providers: [
+    StateService,
     BillingApiClient,
   ],
   bootstrap: [AppComponent]
