@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QueuesComponent } from './queues/queues.component';
+import { QueueComponent } from './queue/queue.component';
 import { TaskToolbarComponent } from './task/task-toolbar/task-toolbar.component';
 import { BillingZoneShellComponent } from './config/billing-zones/billing-zone-shell/billing-zone-shell.component';
 import { BillingZoneListComponent } from './config/billing-zones/billing-zone-list/billing-zone-list.component';
@@ -20,7 +20,7 @@ import { StateService } from 'app/state.service';
   declarations: [
     AppComponent,
     BreadcrumbComponent,
-    QueuesComponent,
+    QueueComponent,
     TaskShellComponent,
     TfTaskComponent,
     TaskToolbarComponent,

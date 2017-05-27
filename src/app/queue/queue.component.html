@@ -1,0 +1,93 @@
+<!-- beg: workset -->
+<div class="workset"
+    *ngFor="let groupedTask of groupedTasks"
+    ng-class="{'task-group-fade' : groupedTask.noTasksInGroup}">
+
+        <!-- beg: task -->
+        <div class="task"
+            ui-sref="app.task.edit({taskId: task.id})"
+            *ngFor="let task of groupedTask"
+            ng-class="{'task-fade' : task.taskArchived || task.taskMovedToNextWorkflowStep}">
+
+            <!-- task title -->
+            <a class="task-title"
+                ui-sref="app.task.edit({taskId: task.id})">
+                <div class="task-heading-text">
+                    <span class="date">{{task.dateParts.date}}</span>
+                    <span class="time">{{task.dateParts.time}}</span>
+                    <span class="task-type-name">{{task.transportTaskTypeName}}</span>
+                    <span class="patient-name">{{task.patientName}}</span>
+                </div>
+                <div class="task-status">
+                    <div class="label label-default">{{task.taskStatusName}}</div>
+                </div>
+                <div class="transport-status">
+                    <div class="label {{task.transportStatusStyle}}">{{task.transportStatusName}}</div>
+                </div>
+            </a>
+
+            <!-- task actions -->
+            <div class="task-move-action">
+                <div ng-if="task.taskArchived"
+                    class="task-archived">
+                    Task <strong>archived</strong>
+                </div>
+                <div ng-if="!task.taskArchived && task.taskMovedToNextWorkflowStep"
+                    class="task-moved">
+                    Moved to <strong>{{task.taskMovedToNextWorkflowStep.name}}</strong>
+                </div>
+                <div ng-if="!task.taskArchived && !task.taskMovedToNextWorkflowStep">
+                    <span>Move to:&nbsp;</span>
+                    <div class="btn-group" uib-dropdown>
+                        <button type="button"
+                            class="btn btn-xs btn-primary task-step-done"
+                            ng-click="$ctrl.moveToNextWorkflowStep(groupedTask, task, 0); $event.stopPropagation();">
+                            <i class="glyphicon glyphicon-play-circle"></i>
+                            Next Step
+                        </button>
+                        <button type="button"
+                            ng-disabled="::$ctrl.workflowSteps.length === 0"
+                            class="btn btn-xs btn-primary select-workflow-step-button"
+                            ng-click="$event.stopPropagation();"
+                            uib-dropdown-toggle>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right move-to-workflow-step-list"
+                            uib-dropdown-menu>
+                            <li ng-repeat="workflowStep in ::$ctrl.workflowSteps track by $index">
+                                <a href
+                                    ng-click="$ctrl.moveToWorkflowStep(groupedTask, task, workflowStep.id); $event.stopPropagation();">
+                                    {{workflowStep.name}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- end: task -->
+
+</div>
+<!-- end: workset -->
+
+
+<!-- no tasks -->
+<div ng-if="!$ctrl.queue.taskCount" class="no-tasks">
+    This queue doesn't have any tasks to handle.
+</div>
+
+
+<!-- pagination -->
+<div ng-if="$ctrl.queue.tasksPaged.items.length">
+    <ul uib-pagination
+        ng-change="$ctrl.refresh()"
+        ng-model="$ctrl.queue.tasksPaged.request.currentPage"
+        total-items="$ctrl.queue.tasksPaged.totalItems"
+        items-per-page="$ctrl.queue.tasksPaged.request.itemsPerPage"
+        max-size="10"
+        force-ellipses="true"
+        boundary-links="true"
+        rotate="true">
+    </ul>
+</div>
