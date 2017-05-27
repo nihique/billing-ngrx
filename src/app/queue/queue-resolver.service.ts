@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class QueueResolver implements Resolve<State> {
-
     constructor(
         private state: State,
     ) {}
@@ -14,5 +13,4 @@ export class QueueResolver implements Resolve<State> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         return this.state.refreshQueue();
     }
-
 }

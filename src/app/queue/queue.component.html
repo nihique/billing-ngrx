@@ -28,15 +28,15 @@
 
             <!-- task actions -->
             <div class="task-move-action">
-                <div ng-if="task.taskArchived"
+                <div *ngIf="task.taskArchived"
                     class="task-archived">
                     Task <strong>archived</strong>
                 </div>
-                <div ng-if="!task.taskArchived && task.taskMovedToNextWorkflowStep"
+                <div *ngIf="!task.taskArchived && task.taskMovedToNextWorkflowStep"
                     class="task-moved">
                     Moved to <strong>{{task.taskMovedToNextWorkflowStep.name}}</strong>
                 </div>
-                <div ng-if="!task.taskArchived && !task.taskMovedToNextWorkflowStep">
+                <div *ngIf="!task.taskArchived && !task.taskMovedToNextWorkflowStep">
                     <span>Move to:&nbsp;</span>
                     <div class="btn-group" uib-dropdown>
                         <button type="button"
@@ -73,13 +73,13 @@
 
 
 <!-- no tasks -->
-<div ng-if="!$ctrl.queue.taskCount" class="no-tasks">
+<div *ngIf="!queue.taskCount" class="no-tasks">
     This queue doesn't have any tasks to handle.
 </div>
 
 
 <!-- pagination -->
-<div ng-if="$ctrl.queue.tasksPaged.items.length">
+<div ng-if="queue.tasksPaged.items.length">
     <ul uib-pagination
         ng-change="$ctrl.refresh()"
         ng-model="$ctrl.queue.tasksPaged.request.currentPage"

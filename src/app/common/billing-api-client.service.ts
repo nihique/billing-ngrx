@@ -36,6 +36,13 @@ export class BillingApiClient {
             .catch(this.handleError);
     }
 
+    getTasksInQueue(request: GetTasksInQueueRequest) {
+        return this.http
+            .post(this.normalizeUrl('tasks/gettasksinqueue'), request)
+            .map(x => x.json())
+            .catch(this.handleError);
+    }
+
     private normalizeUrl(url: string): string {
         return `/BillingModule/${url}`;
     }
@@ -55,4 +62,10 @@ export class BillingApiClient {
 
         return Observable.throw(msg);
     }
+}
+
+export class GetTasksInQueueRequest {
+    queueId: number;
+    itemsPerPage = 10;
+    currentPage = 1;
 }

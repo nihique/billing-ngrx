@@ -39,14 +39,24 @@ export class State {
             .map(workflow => {
                 this.workflow = workflow;
                 this.workflowStep = workflow.workflowSteps[0];
-                return workflow;
             })
-            .mergeMap(workflow => {
+            .mergeMap(_ => {
                 return this.billingApiClient
                     .getQueues(this.workflowStep.id)
                     .map(queues => {
                         this.queues = queues;
                         this.queue = queues[0];
+                    });
+            })
+            .mergeMap(_ => {
+                return this.billingApiClient
+                    .getTasksInQueue({
+                        queueId: this.queue.id,
+                        currentPage: 0,
+                        itemsPerPage: 10
+                    })
+                    .map(tasksPaged => {
+                        this.queue.tasksPaged = tasksPaged;
                     });
             })
             .map(x => this);

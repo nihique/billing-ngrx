@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { State } from 'app/state.service';
+import { chain, iteratee, extend } from 'lodash';
 
 @Component({
   selector: 'queue',
@@ -15,16 +16,38 @@ export class QueueComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.groupedTasks = [];
         this.workflowStep = this.state.workflowStep;
         this.queue = this.state.queue;
+        this.groupedTasks = this.refreshGroupedTasks(this.queue);
     }
 
     private refreshGroupedTasks(queue) {
-        // self.groupedTasks = _.chain(queue.tasksPaged.items)
-        //     .map(transformTask)
-        //     .groupBy('worksetId')
-        //     .orderBy(_.iteratee('[0].worksetId'), 'desc')
-        //     .value();
+        return chain(queue.tasksPaged.items)
+            .map(this.transformTask)
+            .groupBy('worksetId')
+            .orderBy(iteratee('[0].worksetId'), 'desc')
+            .value();
+    }
+
+    private transformTask(task) {
+        return chain(task)
+            .pick([
+                'id',
+                'worksetId',
+                'taskTypeName',
+                'taskArchived',
+                'taskMovedToNextWorkflowStep'
+            ])
+            .thru(function (transformed) {
+                return extend({}, transformed, {
+                    transportStatusName: 'TODO: transportStatus',
+                    transportStatusStyle: 'TODO: transportStatusStyle',
+                    dateParts: { date: 'TODO: date', time: 'TODO: time' },
+                    patientName: 'TODO: patientName',
+                    transportTaskTypeName: 'TODO: taskType',
+                    taskStatusName: 'TODO: taskStatus',
+                });
+            })
+            .value();
     }
 }
