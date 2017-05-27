@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { State } from "app/state.service";
+import { State } from 'app/state.service';
 
 @Component({
   selector: 'queue',
