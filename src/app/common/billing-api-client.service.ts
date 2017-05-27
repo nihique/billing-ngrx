@@ -7,6 +7,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { IBillingConfiguration } from 'app/model/billing-configuration';
 import { IWorkflow } from 'app/model/worfklow';
+import { IQueue } from 'app/model/queue';
 
 @Injectable()
 export class BillingApiClient {
@@ -24,7 +25,14 @@ export class BillingApiClient {
     getDefaultWorkflow(): Observable<IWorkflow> {
         return this.http
             .get(this.normalizeUrl('workflows/get'))
-            .map(x => x.json)
+            .map(x => x.json())
+            .catch(this.handleError);
+    }
+
+    getQueues(workflowStepId: number): Observable<Array<IQueue>> {
+        return this.http
+            .get(this.normalizeUrl(`queues/getqueues?workflowStepId=${workflowStepId}&withTaskCount=true`))
+            .map(x => x.json())
             .catch(this.handleError);
     }
 

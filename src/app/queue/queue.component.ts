@@ -16,4 +16,12 @@ export class QueueComponent implements OnInit {
         this.workflowStep = {};
         this.queue = {};
     }
+
+    private refreshGroupedTasks(queue) {
+        // self.groupedTasks = _.chain(queue.tasksPaged.items)
+        //     .map(transformTask)
+        //     .groupBy('worksetId')
+        //     .orderBy(_.iteratee('[0].worksetId'), 'desc')
+        //     .value();
+    }
 }
