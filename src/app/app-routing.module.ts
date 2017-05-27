@@ -8,7 +8,7 @@ import { QueueResolver } from 'app/queue/queue-resolver.service';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'queues',
+    redirectTo: 'queue',
     pathMatch: 'full'
   },
   {
