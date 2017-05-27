@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { State } from "app/state.service";
 
 @Component({
   selector: 'queue',
@@ -9,12 +10,14 @@ export class QueueComponent implements OnInit {
     public groupedTasks;
     public queue;
 
-    constructor() { }
+    constructor(
+        private state: State,
+    ) {}
 
     ngOnInit() {
         this.groupedTasks = [];
-        this.workflowStep = {};
-        this.queue = {};
+        this.workflowStep = this.state.workflowStep;
+        this.queue = this.state.queue;
     }
 
     private refreshGroupedTasks(queue) {

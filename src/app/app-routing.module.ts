@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { QueueComponent } from 'app/queue/queue.component';
 import { TaskShellComponent } from 'app/task/task-shell.component';
 import { BillingZoneShellComponent } from 'app/config/billing-zones/billing-zone-shell/billing-zone-shell.component';
+import { QueueResolver } from 'app/queue/queue-resolver.service';
 
 const routes: Routes = [
   {
@@ -13,6 +14,9 @@ const routes: Routes = [
   {
     path: 'queue',
     component: QueueComponent,
+    resolve: {
+        queue: QueueResolver
+    },
   },
   {
     path: 'task',
@@ -26,6 +30,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+      QueueResolver,
+  ]
 })
 export class AppRoutingModule { }
