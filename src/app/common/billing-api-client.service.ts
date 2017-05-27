@@ -5,8 +5,8 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-
 import { IBillingConfiguration } from 'app/model/billing-configuration';
+import { IWorkflow } from 'app/model/worfklow';
 
 @Injectable()
 export class BillingApiClient {
@@ -18,6 +18,13 @@ export class BillingApiClient {
         return this.http
             .get(this.normalizeUrl('configuration/get'))
             .map(x => x.json())
+            .catch(this.handleError);
+    }
+
+    getDefaultWorkflow(): Observable<IWorkflow> {
+        return this.http
+            .get(this.normalizeUrl('workflows/get'))
+            .map(x => x.json)
             .catch(this.handleError);
     }
 
