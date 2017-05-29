@@ -16,7 +16,6 @@ export class TaskShellComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        debugger;
         this.task = this.state.task;
     }
 }
