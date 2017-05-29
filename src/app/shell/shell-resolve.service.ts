@@ -9,6 +9,6 @@ export class ShellResolve implements Resolve<State> {
     ) {}
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        return this.state.refreshConfiguration();
+        return this.state.resolveShell();
     }
 }

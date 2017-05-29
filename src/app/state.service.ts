@@ -6,11 +6,13 @@ import { IWorkflowStep } from 'app/model/workflow-step';
 import { IQueue } from 'app/model/queue';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/mergeMap';
+import { ILookups } from 'app/model/lookups';
 
 
 @Injectable()
 export class State {
     configuration: IBillingConfiguration;
+    lookups: ILookups;
     workflow: IWorkflow;
     workflowStep: IWorkflowStep;
     queues: Array<IQueue>;
@@ -20,20 +22,23 @@ export class State {
         private billingApiClient: BillingApiClient
     ) {}
 
-    init() {
-        this.refreshConfiguration();
-    }
-
-    refreshConfiguration(): Observable<State> {
+    resolveShell(): Observable<State> {
         return this.billingApiClient
             .getConfiguration()
             .map(configuration => {
                 this.configuration = configuration;
-                return this;
-            });
+            })
+            .mergeMap(_ => {
+                return this.billingApiClient
+                    .getLookups()
+                    .map(lookups => {
+                        this.lookups = lookups;
+                    });
+            })
+            .map(_ => this);
     }
 
-    refreshQueue(): Observable<State> {
+    resolveQueueShell(): Observable<State> {
         return this.billingApiClient
             .getDefaultWorkflow()
             .map(workflow => {
@@ -59,6 +64,6 @@ export class State {
                         this.queue.tasksInQueuePaged = tasksPaged;
                     });
             })
-            .map(x => this);
+            .map(_ => this);
     }
 }

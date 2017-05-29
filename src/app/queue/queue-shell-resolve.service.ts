@@ -11,6 +11,6 @@ export class QueueShellResolve implements Resolve<State> {
     ) {}
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        return this.state.refreshQueue();
+        return this.state.resolveQueueShell();
     }
 }

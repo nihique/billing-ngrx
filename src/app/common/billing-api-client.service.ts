@@ -8,6 +8,7 @@ import 'rxjs/add/observable/throw';
 import { IBillingConfiguration } from 'app/model/billing-configuration';
 import { IWorkflow } from 'app/model/worfklow';
 import { IQueue } from 'app/model/queue';
+import { ILookups } from 'app/model/lookups';
 
 @Injectable()
 export class BillingApiClient {
@@ -18,6 +19,13 @@ export class BillingApiClient {
     getConfiguration(): Observable<IBillingConfiguration> {
         return this.http
             .get(this.normalizeUrl('configuration/get'))
+            .map(x => x.json())
+            .catch(this.handleError);
+    }
+
+    getLookups(): Observable<ILookups> {
+        return this.http
+            .get(this.normalizeUrl('lookups/getall'))
             .map(x => x.json())
             .catch(this.handleError);
     }

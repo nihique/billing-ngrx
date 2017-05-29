@@ -9,13 +9,9 @@ import { State } from './state.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-    configuration: IBillingConfiguration;
-
     constructor(
-        private state: State,
     ) {}
 
     ngOnInit(): void {
-        this.state.init();
     }
 }
