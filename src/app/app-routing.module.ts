@@ -6,6 +6,7 @@ import { BillingZoneShellComponent } from 'app/config/billing-zones/billing-zone
 import { QueueShellResolve } from 'app/queue/queue-shell-resolve.service';
 import { ShellComponent } from 'app/shell/shell.component';
 import { ShellResolve } from 'app/shell/shell-resolve.service';
+import { TaskShellResolve } from 'app/task/shell-resolve.service';
 
 const routes: Routes = [
     {
@@ -16,20 +17,17 @@ const routes: Routes = [
     {
         path: 'shell',
         component: ShellComponent,
-        resolve: {
-            state: ShellResolve
-        },
+        resolve: { state: ShellResolve },
         children: [
             {
                 path: 'queue',
                 component: QueueShellComponent,
-                resolve: {
-                    state: QueueShellResolve
-                },
+                resolve: { state: QueueShellResolve },
             },
             {
-                path: 'task',
+                path: 'task/:taskId',
                 component: TaskShellComponent,
+                resolve: { state: TaskShellResolve }
             },
             {
                 path: 'config/billing-zones',
@@ -45,6 +43,7 @@ const routes: Routes = [
     providers: [
         ShellResolve,
         QueueShellResolve,
+        TaskShellResolve
     ]
 })
 export class AppRoutingModule { }

@@ -9,6 +9,7 @@ import { IBillingConfiguration } from 'app/model/billing-configuration';
 import { IWorkflow } from 'app/model/worfklow';
 import { IQueue } from 'app/model/queue';
 import { ILookups } from 'app/model/lookups';
+import { ITask } from 'app/model/task';
 
 @Injectable()
 export class BillingApiClient {
@@ -40,6 +41,13 @@ export class BillingApiClient {
     getQueues(workflowStepId: number): Observable<Array<IQueue>> {
         return this.http
             .get(this.normalizeUrl(`queues/getqueues?workflowStepId=${workflowStepId}&withTaskCount=true`))
+            .map(x => x.json())
+            .catch(this.handleError);
+    }
+
+    getTask(taskId: number): Observable<ITask> {
+        return this.http
+            .get(this.normalizeUrl(`tasks/get?id=${taskId}`))
             .map(x => x.json())
             .catch(this.handleError);
     }

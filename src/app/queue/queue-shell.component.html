@@ -5,7 +5,7 @@
 
         <!-- beg: task -->
         <div class="task"
-            ui-sref="app.task.edit({taskId: task.id})"
+            [routerLink]="[ '/shell/task', task.id ]"
             *ngFor="let task of groupedTask"
             ng-class="{'task-fade' : task.taskArchived || task.taskMovedToNextWorkflowStep}">
 

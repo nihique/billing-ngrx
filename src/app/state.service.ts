@@ -7,6 +7,7 @@ import { IQueue } from 'app/model/queue';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/mergeMap';
 import { ILookups } from 'app/model/lookups';
+import { ITask } from 'app/model/task';
 
 
 @Injectable()
@@ -17,6 +18,7 @@ export class State {
     workflowStep: IWorkflowStep;
     queues: Array<IQueue>;
     queue: IQueue;
+    task: ITask;
 
     constructor(
         private billingApiClient: BillingApiClient
@@ -63,6 +65,15 @@ export class State {
                     .map(tasksPaged => {
                         this.queue.tasksInQueuePaged = tasksPaged;
                     });
+            })
+            .map(_ => this);
+    }
+
+    resolveTaskShell(taskId: number): Observable<State> {
+        return this.billingApiClient
+            .getTask(taskId)
+            .map(task => {
+                this.task = task;
             })
             .map(_ => this);
     }
