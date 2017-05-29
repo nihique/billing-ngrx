@@ -1,0 +1,36 @@
+    <!-- template -->
+
+    <div class="form-group"
+         ng-class="{
+            'has-feedback': $ctrl.hasFeedback,
+            'has-success': $ctrl.hasSuccess,
+            'has-warning': $ctrl.hasWarning,
+            'has-error': $ctrl.hasError
+         }">
+
+
+        <!-- label -->
+
+        <label
+            class="control-label"
+            title="label"
+            ng-class="::'col-sm-' + $ctrl.tfForm.labelSize">
+            Label
+            <i ng-if="::$ctrl.isFieldRequired"
+               class="fa fa-star"
+               style="font-size: 60%; position: absolute; margin: 1px 0 0 2px;">
+            </i>
+        </label>
+
+        <tf-merge-group-input></tf-merge-group-input>
+
+        <button
+            ng-if="::$ctrl.editModalName !== undefined && !$ctrl.isInConfigMode"
+            type="button"
+            class="btn btn-default btn-xs edit-button"
+            ng-click="$ctrl.openEditModal()">
+            <span class="fa fa-pencil-square-o"></span>
+            Edit
+        </button>
+
+    </div>

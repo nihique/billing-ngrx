@@ -1,11 +1,17 @@
 <div class="col-md-12">
     <div>TaskId: {{task.id}}</div>
-    <!--<div class="row">
+    <div class="row">
         <div class="col-md-6">
-            Workset
+            <tf-panel>
+                <div title>
+                    Task
+                </div>
+                <tf-form>
+                    <tf-merge-group field="patient.identificationNumber"></tf-merge-group>
+                </tf-form>
+            </tf-panel>
         </div>
         <div class="col-md-6">
-            Patient
         </div>
-    </div>-->
+    </div>
 </div>
