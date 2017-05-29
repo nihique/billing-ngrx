@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { State } from 'app/state.service';
+import { State } from './../state.service';
 import { chain, iteratee, extend } from 'lodash';
 import { IWorkflowStep } from 'app/model/workflow-step';
 import { ITaskInQueue } from 'app/model/task-in-queue';
@@ -7,9 +7,9 @@ import { IQueue } from 'app/model/queue';
 
 @Component({
   selector: 'queue',
-  templateUrl: './queue.component.html',
+  templateUrl: './queue-shell.component.html',
 })
-export class QueueComponent implements OnInit {
+export class QueueShellComponent implements OnInit {
     public workflowStep: IWorkflowStep;
     public groupedTasks: Array<IGroupedTaskVm>;
     public queue: IQueue;

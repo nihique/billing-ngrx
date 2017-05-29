@@ -24,7 +24,7 @@ export class State {
         this.refreshConfiguration();
     }
 
-    refreshConfiguration() {
+    refreshConfiguration(): Observable<State> {
         return this.billingApiClient
             .getConfiguration()
             .map(configuration => {
@@ -33,7 +33,7 @@ export class State {
             });
     }
 
-    refreshQueue() {
+    refreshQueue(): Observable<State> {
         return this.billingApiClient
             .getDefaultWorkflow()
             .map(workflow => {

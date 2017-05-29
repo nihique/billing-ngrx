@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BillingApiClient } from 'app/common/billing-api-client.service';
 import { Observable } from 'rxjs/Observable';
 import { IBillingConfiguration } from 'app/model/billing-configuration';
-import { State } from 'app/state.service';
+import { State } from './state.service';
 
 @Component({
   selector: 'app-root',

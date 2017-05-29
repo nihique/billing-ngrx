@@ -5,7 +5,7 @@ import { State } from 'app/state.service';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class QueueResolver implements Resolve<State> {
+export class QueueShellResolve implements Resolve<State> {
     constructor(
         private state: State,
     ) {}
