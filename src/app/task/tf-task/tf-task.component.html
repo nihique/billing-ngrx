@@ -1,5 +1,4 @@
 <div class="col-md-12">
-    <div>TaskId: {{task.id}}</div>
     <div class="row">
         <div class="col-md-6">
             <tf-panel>
@@ -7,11 +6,20 @@
                     Task
                 </div>
                 <tf-form>
-                    <tf-merge-group field="patient.identificationNumber"></tf-merge-group>
+                    <tf-merge-group field="patient.taskTypeId"></tf-merge-group>
                 </tf-form>
             </tf-panel>
         </div>
         <div class="col-md-6">
+            <tf-panel>
+                <div title>
+                    Patient
+                </div>
+                <tf-form>
+                    <tf-merge-group field="patient.firstName"></tf-merge-group>
+                    <tf-merge-group field="patient.lastName"></tf-merge-group>
+                </tf-form>
+            </tf-panel>
         </div>
     </div>
 </div>

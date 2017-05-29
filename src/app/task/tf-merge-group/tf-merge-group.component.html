@@ -12,9 +12,8 @@
         <!-- label -->
 
         <label
-            class="control-label"
-            title="label"
-            ng-class="::'col-sm-' + $ctrl.tfForm.labelSize">
+            class="control-label col-sm-3"
+            title="label">
             Label
             <i ng-if="::$ctrl.isFieldRequired"
                class="fa fa-star"
@@ -22,15 +21,16 @@
             </i>
         </label>
 
-        <tf-merge-group-input></tf-merge-group-input>
-
-        <button
-            ng-if="::$ctrl.editModalName !== undefined && !$ctrl.isInConfigMode"
-            type="button"
-            class="btn btn-default btn-xs edit-button"
-            ng-click="$ctrl.openEditModal()">
-            <span class="fa fa-pencil-square-o"></span>
-            Edit
-        </button>
+        <div class="col-sm-9">
+            <tf-merge-group-input></tf-merge-group-input>
+            <button
+                ng-if="::$ctrl.editModalName !== undefined && !$ctrl.isInConfigMode"
+                type="button"
+                class="btn btn-default btn-xs edit-button"
+                ng-click="$ctrl.openEditModal()">
+                <span class="fa fa-pencil-square-o"></span>
+                Edit
+            </button>
+        </div>
 
     </div>
