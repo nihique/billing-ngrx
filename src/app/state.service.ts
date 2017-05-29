@@ -56,7 +56,7 @@ export class State {
                         itemsPerPage: 10
                     })
                     .map(tasksPaged => {
-                        this.queue.tasksPaged = tasksPaged;
+                        this.queue.tasksInQueuePaged = tasksPaged;
                     });
             })
             .map(x => this);

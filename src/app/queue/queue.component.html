@@ -10,8 +10,7 @@
             ng-class="{'task-fade' : task.taskArchived || task.taskMovedToNextWorkflowStep}">
 
             <!-- task title -->
-            <a class="task-title"
-                ui-sref="app.task.edit({taskId: task.id})">
+            <a class="task-title">
                 <div class="task-heading-text">
                     <span class="date">{{task.dateParts.date}}</span>
                     <span class="time">{{task.dateParts.time}}</span>
