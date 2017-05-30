@@ -1,0 +1,41 @@
+<tf-panel>
+    <div title>
+        Workset
+        <!--<doc-documents-button
+            ng-if="::$ctrl.taskShell.isInEditTaskMode()"
+            options="::$ctrl.docDocumentsButtonOptions"
+            class="pull-right">
+        </doc-documents-button>-->
+    </div>
+    <tf-form>
+        <!--<tf-data-sources-group field="workset.dataSources" />-->
+        <!--<tf-external-ids-group field="workset.worksetIds" />-->
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.dispatchCenter']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.billingAreaCodesJoined']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.billingAreaNamesJoined']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.incidentResponseType']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.requestingFacilityCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.requestingFacilityName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.callTakerCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.callTakerName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.phonePickupTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.firstKeystrokeTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.callStartedTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.callTakingCompleteTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.callEndedTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.firstUnitAssignedTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.firstUnitEnrouteTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.firstUnitArrivedTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.cancelledTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.callerPhone']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.callerName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.callOutcome']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.callStatusId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.firstUnitAvailableTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.delayedByUserName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.pickupPromisedTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.pickupPreferredTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['workset.eventPlan']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.delayReasonsJoined']"></tf-merge-group>
+    </tf-form>
+</tf-panel>

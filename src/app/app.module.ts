@@ -26,6 +26,7 @@ import { TfTransportComponent } from 'app/task/tf-transport/tf-transport.compone
 import { TfTransportDetailComponent } from 'app/task/tf-transport-detail/tf-transport-detail.component';
 import { TfLocationComponent } from 'app/task/tf-location/tf-location.component';
 import { TfHipaaComponent } from 'app/task/tf-hipaa/tf-hipaa.component';
+import { TfWorksetComponent } from 'app/task/tf-workset/tf-workset.component';
 
 @NgModule({
     declarations: [
@@ -42,12 +43,13 @@ import { TfHipaaComponent } from 'app/task/tf-hipaa/tf-hipaa.component';
         // Task Feature
         TaskShellComponent,
         TaskToolbarComponent,
-        TfTaskComponent,
         TfPanelComponent,
         TfFormComponent,
         TfMergeGroupComponent,
         TfMergeGroupInputComponent,
         TfPanelComponent,
+        TfTaskComponent,
+        TfWorksetComponent,
         TfPatientComponent,
         TfAddressComponent,
         TfTransportComponent,

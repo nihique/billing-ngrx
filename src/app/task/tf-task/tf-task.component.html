@@ -19,9 +19,15 @@
                     <tf-merge-group [options]="tfMergeGroupOptions['billingZoneId']"></tf-merge-group>
                 </tf-form>
             </tf-panel>
+            <!--<tf-signatures></tf-signatures>-->
+            <tf-workset
+                [tfMergeGroupOptions]="tfMergeGroupOptions">
+            </tf-workset>
         </div>
         <div class="col-md-6">
-            <tf-patient [tfMergeGroupOptions]="tfMergeGroupOptions"></tf-patient>
+            <tf-patient
+                [tfMergeGroupOptions]="tfMergeGroupOptions">
+            </tf-patient>
         </div>
     </div>
 </div>
