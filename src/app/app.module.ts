@@ -24,6 +24,7 @@ import { TfPatientComponent } from 'app/task/tf-patient/tf-patient.component';
 import { TfAddressComponent } from 'app/task/tf-address/tf-address.component';
 import { TfTransportComponent } from 'app/task/tf-transport/tf-transport.component';
 import { TfTransportDetailComponent } from 'app/task/tf-transport-detail/tf-transport-detail.component';
+import { TfLocationComponent } from 'app/task/tf-location/tf-location.component';
 
 @NgModule({
     declarations: [
@@ -50,6 +51,7 @@ import { TfTransportDetailComponent } from 'app/task/tf-transport-detail/tf-tran
         TfAddressComponent,
         TfTransportComponent,
         TfTransportDetailComponent,
+        TfLocationComponent,
 
         // Admin BillingZone Feature
         BillingZoneShellComponent,
