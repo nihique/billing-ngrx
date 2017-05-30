@@ -24,7 +24,7 @@ export interface IFieldConfiguration {
     dateTimeHandling: DateTimeHandling;
     validators: Array<IValidator>;
     dataSourceComparers: Array<IComparer>;
-    visibility: IVisibility
+    visibility: IVisibility;
 }
 
 
@@ -88,7 +88,7 @@ export interface IDateRangeComparer extends IComparer {
 
 export interface IVisibility {
     defaultRule: boolean;
-    fieldValueVisibilityRules: Array<IFieldValueVisibilityRule>
+    fieldValueVisibilityRules: Array<IFieldValueVisibilityRule>;
 }
 
 export interface IFieldValueVisibilityRule {

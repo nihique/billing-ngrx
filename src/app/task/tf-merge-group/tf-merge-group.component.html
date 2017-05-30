@@ -1,12 +1,11 @@
     <!-- template -->
 
     <div class="form-group"
-         ng-class="{
-            'has-feedback': $ctrl.hasFeedback,
-            'has-success': $ctrl.hasSuccess,
-            'has-warning': $ctrl.hasWarning,
-            'has-error': $ctrl.hasError
-         }">
+        [class.has-feedback]="options.hasFeedback"
+        [class.has-success]="options.hasSuccess"
+        [class.has-warning]="options.hasWarning"
+        [class.has-error]="options.hasError"
+    >
 
 
         <!-- label -->
@@ -14,7 +13,7 @@
         <label
             class="control-label col-sm-3"
             title="label">
-            Label
+            {{options.label}}
             <i ng-if="::$ctrl.isFieldRequired"
                class="fa fa-star"
                style="font-size: 60%; position: absolute; margin: 1px 0 0 2px;">
@@ -22,7 +21,8 @@
         </label>
 
         <div class="col-sm-9">
-            <tf-merge-group-input></tf-merge-group-input>
+            <tf-merge-group-input [options]="options"></tf-merge-group-input>
+
             <button
                 ng-if="::$ctrl.editModalName !== undefined && !$ctrl.isInConfigMode"
                 type="button"
@@ -31,6 +31,23 @@
                 <span class="fa fa-pencil-square-o"></span>
                 Edit
             </button>
+
+            <!-- feedback icon -->
+
+            <span ng-if="$ctrl.hasFeedback">
+                <span
+                    *ngIf="options.hasSuccess"
+                    class="form-control-feedback glyphicon glyphicon-ok">
+                </span>
+                <span
+                    *ngIf="options.hasWarning"
+                    class="form-control-feedback glyphicon glyphicon-warning-sign">
+                </span>
+                <span
+                    *ngIf="options.hasError"
+                    class="form-control-feedback glyphicon glyphicon-remove">
+                </span>
+            </span>
         </div>
 
     </div>

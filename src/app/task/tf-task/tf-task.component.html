@@ -6,7 +6,7 @@
                     Task
                 </div>
                 <tf-form>
-                    <tf-merge-group field="patient.taskTypeId"></tf-merge-group>
+                    <tf-merge-group [options]="tfMergeGroupOptions['shouldBeInvoiced']"></tf-merge-group>
                 </tf-form>
             </tf-panel>
         </div>
@@ -16,8 +16,8 @@
                     Patient
                 </div>
                 <tf-form>
-                    <tf-merge-group field="patient.firstName"></tf-merge-group>
-                    <tf-merge-group field="patient.lastName"></tf-merge-group>
+                    <tf-merge-group [options]="tfMergeGroupOptions['patient.firstName']"></tf-merge-group>
+                    <tf-merge-group [options]="tfMergeGroupOptions['patient.lastName']"></tf-merge-group>
                 </tf-form>
             </tf-panel>
         </div>

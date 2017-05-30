@@ -1,6 +1,7 @@
 <input type="text"
     class="form-control"
-    placeholder="placeholder"
+    [placeholder]="options.label"
+    [value]="options.value"
 >
 
 <!--<input type="{{::$ctrl.tfMergeGroup.isWholeNumber() ? 'number' : 'text'}}"

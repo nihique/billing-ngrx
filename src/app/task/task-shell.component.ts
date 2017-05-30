@@ -3,6 +3,7 @@ import { State } from './../state.service';
 import { ITask } from 'app/model/task';
 import { IBillingConfiguration, TaskType } from 'app/model/billing-configuration';
 import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options';
+import { chain, map, get, Dictionary } from 'lodash';
 
 @Component({
     selector: 'task-shell',
@@ -12,7 +13,7 @@ export class TaskShellComponent implements OnInit {
     public taskMode = 'edit';
     public taskTypeName = 'Transport';
     public task: ITask;
-    public tfMergeGroupOptions: Map<string, ITfMergeGroupOptions>;
+    public tfMergeGroupOptions: Dictionary<ITfMergeGroupOptions>;
 
     constructor(
         private state: State
@@ -26,8 +27,19 @@ export class TaskShellComponent implements OnInit {
     private buildTfMergeGroupOptions(
         task: ITask,
         configuration: IBillingConfiguration):
-        Map<string, ITfMergeGroupOptions> {
-        const options = new Map<string, ITfMergeGroupOptions>();
-        return options;
+        Dictionary<ITfMergeGroupOptions> {
+
+        return chain(configuration.tasks[0].fields)
+            .map(config => <ITfMergeGroupOptions> {
+                field: config.key,
+                label: config.label,
+                value: get(task, config.key),
+                hasFeedback: true,
+                hasSuccess: true,
+                hasError: false,
+                hasWarning: false,
+            })
+            .keyBy(x => x.field)
+            .value();
     }
 }
