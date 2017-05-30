@@ -22,6 +22,8 @@ import { TfMergeGroupComponent } from 'app/task/tf-merge-group/tf-merge-group.co
 import { TfMergeGroupInputComponent } from 'app/task/tf-merge-group-input/tf-merge-group-input.component';
 import { TfPatientComponent } from 'app/task/tf-patient/tf-patient.component';
 import { TfAddressComponent } from 'app/task/tf-address/tf-address.component';
+import { TfTransportComponent } from 'app/task/tf-transport/tf-transport.component';
+import { TfTransportDetailComponent } from 'app/task/tf-transport-detail/tf-transport-detail.component';
 
 @NgModule({
     declarations: [
@@ -46,6 +48,8 @@ import { TfAddressComponent } from 'app/task/tf-address/tf-address.component';
         TfPanelComponent,
         TfPatientComponent,
         TfAddressComponent,
+        TfTransportComponent,
+        TfTransportDetailComponent,
 
         // Admin BillingZone Feature
         BillingZoneShellComponent,

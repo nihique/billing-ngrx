@@ -1,0 +1,73 @@
+<tf-panel>
+    <div title>
+        Transport - Detail
+        <!--<doc-documents-button
+            ng-if="::$ctrl.taskShell.isInEditTaskMode()"
+            options="::$ctrl.docDocumentsButtonOptions"
+            class="pull-right">
+        </doc-documents-button>-->
+    </div>
+    <tf-form>
+        <!--<tf-data-sources-group field="transport.dataSources" />-->
+        <!--<tf-external-ids-group field="taskIds"/>                -->
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.transportStatusId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.transportModeId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.transportFirstChunk']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.patientAccountNumber']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.patientInsuranceName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.patientInsuranceGroupNumber']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.departSceneTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.arrivedDestinationTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.finishedTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.finishedSystemTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.cancelledTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.lightsAndSiren']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.requestedLevelOfService']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.requestedLevelOfServiceCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.providedLevelOfService']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.providedLevelOfServiceCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.unitAssignedTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.unitEnrouteSystemTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.atSceneTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.atSceneSystemTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.unitAvailableTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.stagedTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.dispatcherId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.dispatcherName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.cancelReasonCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.cancelReason']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.locationWhenAssigned']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.longitudeWhenAssigned']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.latitudeWhenAssigned']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.transportOutcome']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.contractName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.contractCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.resourceTemplateTypeName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.stagedByUserName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.priorityUpgradeTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.priorityDowngradeTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.diagnosisCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.diagnosisName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.initialPriorityCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.initialPriorityName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.priorityCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.priorityName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.providedPriority']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.splitTransportGroupId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.repeatingTransportId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.transportGroupId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.plannerGroupId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.resourceName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.resourceCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.vehicleName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.vehicleCode']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.atPatientTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.transferOfCareTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.taskConfirmedByDriverTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.taskReceivedByVehicleTime']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.dispatchedBasedOnSystemSuggestion']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.tripWithPatientDistance']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.delayReasonsJoined']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.cause']"></tf-merge-group>
+    </tf-form>
+</tf-panel>
