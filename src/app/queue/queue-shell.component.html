@@ -1,6 +1,7 @@
 <!-- beg: workset -->
 <div class="workset"
     *ngFor="let groupedTask of groupedTasks"
+    [class.only-one-task]="groupedTask.length === 1"
     ng-class="{'task-group-fade' : groupedTask.noTasksInGroup}">
 
         <!-- beg: task -->
