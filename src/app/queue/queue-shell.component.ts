@@ -46,7 +46,7 @@ export class QueueShellComponent implements OnInit {
                     transportStatusName: 'TODO: transportStatus',
                     transportStatusStyle: 'TODO: transportStatusStyle',
                     dateParts: { date: 'TODO: date', time: 'TODO: time' },
-                    patientName: task.patientFirstName + task.patientLastName,
+                    patientName: `${task.patientFirstName} ${task.patientLastName}`,
                     transportTaskTypeName: 'TODO: taskType',
                     taskStatusName: 'TODO: taskStatus',
                 } as ITaskVm);
