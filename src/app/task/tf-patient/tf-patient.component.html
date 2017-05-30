@@ -1,0 +1,41 @@
+<tf-panel>
+    <div title>
+        <!--<span ng-if="$ctrl.tfTask.task.patient.firstName || $ctrl.tfTask.task.patient.lastName">
+            Patient - {{$ctrl.tfTask.task.patient.firstName}} {{$ctrl.tfTask.task.patient.lastName}}
+        </span>-->
+        <span ng-if="!($ctrl.tfTask.task.patient.firstName || $ctrl.tfTask.task.patient.lastName)">
+            Patient
+        </span>
+        <!--<doc-documents-button
+             ng-if="::$ctrl.taskShell.isInEditTaskMode()"
+             options="::$ctrl.docDocumentsButtonOptions"
+             class="pull-right">
+        </doc-documents-button>-->
+    </div>
+    <tf-form>
+        <!--<tf-data-sources-group field="patient.dataSources" />-->
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.identificationNumber']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.firstName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.middleName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.lastName']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.dateOfBirth']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.genderId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.phone']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.mobilePhone']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.workPhone']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.weight']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.height']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.ethnicity']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.foreigner']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['patient.comment']"></tf-merge-group>
+    </tf-form>
+</tf-panel>
+
+<tf-panel>
+    <div title>
+        Patient - Address
+    </div>
+    <tf-form>
+        <!--<tf-address path="patient.address" />-->
+    </tf-form>
+</tf-panel>

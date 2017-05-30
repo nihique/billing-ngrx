@@ -20,35 +20,47 @@ import { TfPanelComponent } from 'app/task/tf-panel/tf-panel.component';
 import { TfFormComponent } from 'app/task/tf-form/tf-form.component';
 import { TfMergeGroupComponent } from 'app/task/tf-merge-group/tf-merge-group.component';
 import { TfMergeGroupInputComponent } from 'app/task/tf-merge-group-input/tf-merge-group-input.component';
+import { TfPatientComponent } from "app/task/tf-patient/tf-patient.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ShellComponent,
-    BreadcrumbComponent,
-    QueueShellComponent,
-    TaskShellComponent,
-    TfTaskComponent,
-    TfPanelComponent,
-    TfFormComponent,
-    TfMergeGroupComponent,
-    TfMergeGroupInputComponent,
-    TaskToolbarComponent,
-    BillingZoneShellComponent,
-    BillingZoneListComponent,
-    BillingZoneDetailComponent,
-    MainToolbarComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule
-  ],
-  providers: [
-    State,
-    BillingApiClient,
-  ],
-  bootstrap: [AppComponent],
+    declarations: [
+        // App
+        AppComponent,
+
+        // Shell
+        ShellComponent,
+        BreadcrumbComponent,
+
+        // Queue Feature
+        QueueShellComponent,
+
+        // Task Feature
+        TaskShellComponent,
+        TaskToolbarComponent,
+        TfTaskComponent,
+        TfPanelComponent,
+        TfFormComponent,
+        TfMergeGroupComponent,
+        TfMergeGroupInputComponent,
+        TfPanelComponent,
+        TfPatientComponent,
+
+        // Admin BillingZone Feature
+        BillingZoneShellComponent,
+        BillingZoneListComponent,
+        BillingZoneDetailComponent,
+        MainToolbarComponent,
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule
+    ],
+    providers: [
+        State,
+        BillingApiClient,
+    ],
+    bootstrap: [AppComponent],
 })
 export class AppModule { }
