@@ -36,6 +36,9 @@
         Patient - Address
     </div>
     <tf-form>
-        <!--<tf-address path="patient.address" />-->
+        <tf-address
+            [tfMergeGroupOptions]="tfMergeGroupOptions"
+            [path]="'patient.address'">
+        </tf-address>
     </tf-form>
 </tf-panel>

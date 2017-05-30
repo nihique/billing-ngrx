@@ -20,7 +20,8 @@ import { TfPanelComponent } from 'app/task/tf-panel/tf-panel.component';
 import { TfFormComponent } from 'app/task/tf-form/tf-form.component';
 import { TfMergeGroupComponent } from 'app/task/tf-merge-group/tf-merge-group.component';
 import { TfMergeGroupInputComponent } from 'app/task/tf-merge-group-input/tf-merge-group-input.component';
-import { TfPatientComponent } from "app/task/tf-patient/tf-patient.component";
+import { TfPatientComponent } from 'app/task/tf-patient/tf-patient.component';
+import { TfAddressComponent } from 'app/task/tf-address/tf-address.component';
 
 @NgModule({
     declarations: [
@@ -44,6 +45,7 @@ import { TfPatientComponent } from "app/task/tf-patient/tf-patient.component";
         TfMergeGroupInputComponent,
         TfPanelComponent,
         TfPatientComponent,
+        TfAddressComponent,
 
         // Admin BillingZone Feature
         BillingZoneShellComponent,

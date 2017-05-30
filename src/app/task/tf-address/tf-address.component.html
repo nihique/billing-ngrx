@@ -1,0 +1,21 @@
+<tf-form>
+    <!--<tf-data-sources-group field="{{::$ctrl.path}}.dataSources" />-->
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.locationModifier']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.locationType']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.street']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.houseNumber']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.floorAndDoor']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.city']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.suburb']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.country']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.state']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.postalCode']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.municipality']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.facilityName']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.facilityCode']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.facilityPhone']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.longitude']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.latitude']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.isResidence']"></tf-merge-group>
+    <tf-merge-group [options]="tfMergeGroupOptions[path + '.comment']"></tf-merge-group>
+</tf-form>
