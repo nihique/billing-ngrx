@@ -6,4 +6,5 @@ export interface ITfMergeGroupOptions {
     hasSuccess: boolean;
     hasWarning: boolean;
     hasError: boolean;
+    isFieldRequired: boolean;
 }

@@ -14,7 +14,7 @@
             class="control-label col-sm-3"
             title="{{options.label}}">
             {{options.label}}
-            <i ng-if="::$ctrl.isFieldRequired"
+            <i *ngIf="options.isFieldRequired"
                class="fa fa-star"
                style="font-size: 60%; position: absolute; margin: 1px 0 0 2px;">
             </i>

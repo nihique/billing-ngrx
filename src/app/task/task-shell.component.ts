@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { State } from './../state.service';
 import { ITask } from 'app/model/task';
-import { IBillingConfiguration, TaskType } from 'app/model/billing-configuration';
+import { IBillingConfiguration, TaskType, IValidator } from 'app/model/billing-configuration';
 import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options';
-import { chain, map, get, Dictionary } from 'lodash';
+import { chain, map, get, Dictionary, some } from 'lodash';
 
 @Component({
     selector: 'task-shell',
@@ -38,6 +38,7 @@ export class TaskShellComponent implements OnInit {
                 hasSuccess: true,
                 hasError: false,
                 hasWarning: false,
+                isFieldRequired: some<IValidator>(config.validators, x => x.type === 'RequiredValidator')
             })
             .keyBy(x => x.field)
             .value();
