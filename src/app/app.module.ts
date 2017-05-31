@@ -1,39 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QueueShellComponent } from './queue/queue-shell.component';
-import { TaskToolbarComponent } from './task/task-toolbar/task-toolbar.component';
 import { BillingZoneShellComponent } from './config/billing-zones/billing-zone-shell/billing-zone-shell.component';
 import { BillingZoneListComponent } from './config/billing-zones/billing-zone-list/billing-zone-list.component';
 import { BillingZoneDetailComponent } from './config/billing-zones/billing-zone-detail/billing-zone-detail.component';
 import { BillingApiClient } from 'app/common/billing-api-client.service';
-import { TaskShellComponent } from 'app/task/task-shell.component';
-import { TfTaskComponent } from 'app/task/tf-task/tf-task.component';
 import { State } from 'app/state.service';
-import { ShellComponent } from 'app/shell/shell.component';
-import { TfPanelComponent } from 'app/task/tf-panel/tf-panel.component';
-import { TfFormComponent } from 'app/task/tf-form/tf-form.component';
-import { TfMergeGroupComponent } from 'app/task/tf-merge-group/tf-merge-group.component';
-import { TfMergeGroupInputComponent } from 'app/task/tf-merge-group-input/tf-merge-group-input.component';
-import { TfPatientComponent } from 'app/task/tf-patient/tf-patient.component';
-import { TfAddressComponent } from 'app/task/tf-address/tf-address.component';
-import { TfTransportComponent } from 'app/task/tf-transport/tf-transport.component';
-import { TfTransportDetailComponent } from 'app/task/tf-transport-detail/tf-transport-detail.component';
-import { TfLocationComponent } from 'app/task/tf-location/tf-location.component';
-import { TfHipaaComponent } from 'app/task/tf-hipaa/tf-hipaa.component';
-import { TfWorksetComponent } from 'app/task/tf-workset/tf-workset.component';
 import { ShellModule } from 'app/shell/shell.module';
+import { TaskModule } from 'app/task/task.module';
 
 @NgModule({
     imports: [
+        // Angular Modules
         BrowserModule,
-        FormsModule,
         HttpModule,
+
+        // App Modules
         AppRoutingModule,
+
+        // Shell Modules
         ShellModule,
+        TaskModule,
     ],
     exports: [
     ],
@@ -43,23 +33,6 @@ import { ShellModule } from 'app/shell/shell.module';
 
         // Queue Feature
         QueueShellComponent,
-
-        // Task Feature
-        TaskShellComponent,
-        TaskToolbarComponent,
-        TfPanelComponent,
-        TfFormComponent,
-        TfMergeGroupComponent,
-        TfMergeGroupInputComponent,
-        TfPanelComponent,
-        TfTaskComponent,
-        TfWorksetComponent,
-        TfPatientComponent,
-        TfAddressComponent,
-        TfTransportComponent,
-        TfTransportDetailComponent,
-        TfLocationComponent,
-        TfHipaaComponent,
 
         // Admin BillingZone Feature
         BillingZoneShellComponent,

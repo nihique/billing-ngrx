@@ -8,11 +8,6 @@ import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options.model';
     templateUrl: 'tf-task.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TfTaskComponent implements OnInit {
+export class TfTaskComponent {
     @Input() tfMergeGroupOptions: Dictionary<ITfMergeGroupOptions>;
-
-    constructor() { }
-
-    ngOnInit() {
-    }
 }

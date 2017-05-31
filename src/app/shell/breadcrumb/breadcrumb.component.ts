@@ -5,10 +5,5 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     templateUrl: './breadcrumb.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BreadcrumbComponent implements OnInit {
-    constructor() {
-    }
-
-    ngOnInit(): void {
-    }
+export class BreadcrumbComponent {
 }

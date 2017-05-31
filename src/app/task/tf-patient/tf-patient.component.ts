@@ -8,10 +8,6 @@ import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options.model';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class TfPatientComponent implements OnInit {
+export class TfPatientComponent {
     @Input() tfMergeGroupOptions: Dictionary<ITfMergeGroupOptions>;
-
-    constructor() { }
-
-    ngOnInit() { }
 }
