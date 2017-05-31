@@ -10,32 +10,113 @@
     <tf-form>
         <!--<tf-data-sources-group field="workset.dataSources" />-->
         <!--<tf-external-ids-group field="workset.worksetIds" />-->
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.dispatchCenter']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.billingAreaCodesJoined']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.billingAreaNamesJoined']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.incidentResponseType']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.requestingFacilityCode']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.requestingFacilityName']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.callTakerCode']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.callTakerName']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.phonePickupTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.firstKeystrokeTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.callStartedTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.callTakingCompleteTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.callEndedTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.firstUnitAssignedTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.firstUnitEnrouteTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.firstUnitArrivedTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.cancelledTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.callerPhone']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.callerName']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.callOutcome']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.callStatusId']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.firstUnitAvailableTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.delayedByUserName']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.pickupPromisedTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.pickupPreferredTime']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['workset.eventPlan']"></tf-merge-group>
-        <tf-merge-group [options]="tfMergeGroupOptions['transport.delayReasonsJoined']"></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.dispatchCenter']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.billingAreaCodesJoined']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.billingAreaNamesJoined']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.incidentResponseType']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.requestingFacilityCode']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.requestingFacilityName']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.callTakerCode']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.callTakerName']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.phonePickupTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.firstKeystrokeTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.callStartedTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.callTakingCompleteTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.callEndedTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.firstUnitAssignedTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.firstUnitEnrouteTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.firstUnitArrivedTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.cancelledTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.callerPhone']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.callerName']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.callOutcome']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.callStatusId']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.firstUnitAvailableTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.delayedByUserName']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.pickupPromisedTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.pickupPreferredTime']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['workset.eventPlan']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['transport.delayReasonsJoined']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
     </tf-form>
 </tf-panel>

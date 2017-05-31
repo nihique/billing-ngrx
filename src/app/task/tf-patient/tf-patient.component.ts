@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { Dictionary } from 'lodash';
 import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options.model';
 
@@ -10,4 +10,5 @@ import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options.model';
 
 export class TfPatientComponent {
     @Input() tfMergeGroupOptions: Dictionary<ITfMergeGroupOptions>;
+    @Output() fieldChanged = new EventEmitter();
 }

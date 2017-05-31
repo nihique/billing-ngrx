@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { Dictionary } from 'lodash';
 import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options.model';
 
@@ -8,12 +8,9 @@ import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options.model';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class TfLocationComponent implements OnInit {
+export class TfLocationComponent {
     @Input() tfMergeGroupOptions: Dictionary<ITfMergeGroupOptions>;
     @Input() title: string;
     @Input() path: string;
-
-    constructor() { }
-
-    ngOnInit() { }
+    @Output() fieldChanged = new EventEmitter();
 }
