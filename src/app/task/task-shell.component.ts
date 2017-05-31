@@ -1,13 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { State } from './../state.service';
-import { ITask } from 'app/model/task';
-import { IBillingConfiguration, TaskType, IValidator } from 'app/model/billing-configuration';
-import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options';
+import { ITask } from 'app/model/task.model';
+import { IBillingConfiguration, TaskType, IValidator } from 'app/model/billing-configuration.model';
+import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options.model';
 import { chain, map, get, Dictionary, some } from 'lodash';
 
 @Component({
     selector: 'task-shell',
     templateUrl: './task-shell.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TaskShellComponent implements OnInit {
     public taskMode = 'edit';

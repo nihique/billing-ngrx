@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { State } from './../state.service';
 import { chain, iteratee, extend } from 'lodash';
-import { IWorkflowStep } from 'app/model/workflow-step';
-import { ITaskInQueue } from 'app/model/task-in-queue';
-import { IQueue } from 'app/model/queue';
+import { IWorkflowStep } from 'app/model/workflow-step.model';
+import { ITaskInQueue } from 'app/model/task-in-queue.model';
+import { IQueue } from 'app/model/queue.model';
 
 @Component({
-  selector: 'queue',
-  templateUrl: './queue-shell.component.html',
+    selector: 'queue',
+    templateUrl: 'queue-shell.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QueueShellComponent implements OnInit {
     public workflowStep: IWorkflowStep;
@@ -16,7 +17,7 @@ export class QueueShellComponent implements OnInit {
 
     constructor(
         private state: State,
-    ) {}
+    ) { }
 
     ngOnInit() {
         this.workflowStep = this.state.workflowStep;

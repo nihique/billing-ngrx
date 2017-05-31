@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Dictionary } from 'lodash';
-import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options';
+import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options.model';
 
 @Component({
     selector: 'tf-patient',
-    templateUrl: 'tf-patient.component.html'
+    templateUrl: 'tf-patient.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class TfPatientComponent implements OnInit {

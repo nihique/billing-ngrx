@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'billing-zone-shell',
-  templateUrl: './billing-zone-shell.component.html',
+    selector: 'billing-zone-shell',
+    templateUrl: 'billing-zone-shell.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BillingZoneShellComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }
