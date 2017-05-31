@@ -1,16 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QueueShellComponent } from './queue/queue-shell.component';
-import { BillingZoneShellComponent } from './config/billing-zones/billing-zone-shell/billing-zone-shell.component';
-import { BillingZoneListComponent } from './config/billing-zones/billing-zone-list/billing-zone-list.component';
-import { BillingZoneDetailComponent } from './config/billing-zones/billing-zone-detail/billing-zone-detail.component';
-import { BillingApiClient } from 'app/common/billing-api-client.service';
-import { State } from 'app/state.service';
-import { ShellModule } from 'app/shell/shell.module';
-import { TaskModule } from 'app/task/task.module';
+import { BillingApiClient } from './common/billing-api-client.service';
+import { State } from './state.service';
+import { ShellModule } from './shell/shell.module';
+import { TaskModule } from './task/task.module';
+import { QueueModule } from './queue/queue.module';
+import { BillingZonesModule } from './config/billing-zones/billing-zones.module';
 
 @NgModule({
     imports: [
@@ -23,21 +22,14 @@ import { TaskModule } from 'app/task/task.module';
 
         // Shell Modules
         ShellModule,
+        QueueModule,
         TaskModule,
+        BillingZonesModule,
     ],
     exports: [
     ],
     declarations: [
-        // App
         AppComponent,
-
-        // Queue Feature
-        QueueShellComponent,
-
-        // Admin BillingZone Feature
-        BillingZoneShellComponent,
-        BillingZoneListComponent,
-        BillingZoneDetailComponent,
     ],
     providers: [
         State,
