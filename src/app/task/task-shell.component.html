@@ -9,7 +9,31 @@
 </div>
 
 <div class="row">
-    <tf-task [tfMergeGroupOptions]="tfMergeGroupOptions"></tf-task>
+    <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <tf-task
+                [tfMergeGroupOptions]="tfMergeGroupOptions">
+            </tf-task>
+            <!--TODO: <tf-signatures></tf-signatures>-->
+            <tf-workset
+                [tfMergeGroupOptions]="tfMergeGroupOptions">
+            </tf-workset>
+        </div>
+        <div class="col-md-6">
+            <tf-patient
+                [tfMergeGroupOptions]="tfMergeGroupOptions">
+            </tf-patient>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="row">
+        <tf-transport
+            [tfMergeGroupOptions]="tfMergeGroupOptions">
+        </tf-transport>
+    </div>
 </div>
 
 <!--<task-toolbar></task-toolbar>-->

@@ -1,39 +1,18 @@
-<div class="col-md-12">
-    <div class="row">
-        <div class="col-md-6">
-            <tf-panel>
-                <div title>
-                    Task
-                </div>
-                <tf-form>
-                    <tf-merge-group [options]="tfMergeGroupOptions['transport.taskTypeId']"></tf-merge-group>
-                    <tf-merge-group [options]="tfMergeGroupOptions['statusId']"></tf-merge-group>
-                    <tf-merge-group [options]="tfMergeGroupOptions['narrative']"></tf-merge-group>
-                    <tf-merge-group [options]="tfMergeGroupOptions['icd10Code01']"></tf-merge-group>
-                    <tf-merge-group [options]="tfMergeGroupOptions['icd10Code02']"></tf-merge-group>
-                    <tf-merge-group [options]="tfMergeGroupOptions['icd10Code03']"></tf-merge-group>
-                    <tf-merge-group [options]="tfMergeGroupOptions['icd10Code04']"></tf-merge-group>
-                    <tf-merge-group [options]="tfMergeGroupOptions['icd10Code05']"></tf-merge-group>
-                    <tf-merge-group [options]="tfMergeGroupOptions['shouldBeInvoiced']"></tf-merge-group>
-                    <tf-merge-group [options]="tfMergeGroupOptions['shouldNotBeInvoicedReason']"></tf-merge-group>
-                    <tf-merge-group [options]="tfMergeGroupOptions['billingZoneId']"></tf-merge-group>
-                </tf-form>
-            </tf-panel>
-            <!--<tf-signatures></tf-signatures>-->
-            <tf-workset
-                [tfMergeGroupOptions]="tfMergeGroupOptions">
-            </tf-workset>
-        </div>
-        <div class="col-md-6">
-            <tf-patient
-                [tfMergeGroupOptions]="tfMergeGroupOptions">
-            </tf-patient>
-        </div>
+<tf-panel>
+    <div title>
+        Task
     </div>
-</div>
-
-<div class="col-md-12">
-    <div class="row">
-        <tf-transport [tfMergeGroupOptions]="tfMergeGroupOptions"></tf-transport>
-    </div>
-</div>
+    <tf-form>
+        <tf-merge-group [options]="tfMergeGroupOptions['transport.taskTypeId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['statusId']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['narrative']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['icd10Code01']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['icd10Code02']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['icd10Code03']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['icd10Code04']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['icd10Code05']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['shouldBeInvoiced']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['shouldNotBeInvoicedReason']"></tf-merge-group>
+        <tf-merge-group [options]="tfMergeGroupOptions['billingZoneId']"></tf-merge-group>
+    </tf-form>
+</tf-panel>
