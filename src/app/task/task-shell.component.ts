@@ -26,8 +26,7 @@ export class TaskShellComponent implements OnInit {
     }
 
     fieldChanged(event: IFieldChangedEvent): void {
-        // hack: remove when value changing will be working in tf-merge-group-component
-        event.value = event.value.toString() + 'added';
+        const oldValue = get(this.state.task, event.field);
 
         // change Task
         const newTask = cloneDeep(this.task);
@@ -38,6 +37,9 @@ export class TaskShellComponent implements OnInit {
         const newTfMergeGroupOptions = cloneDeep(this.tfMergeGroupOptions);
         newTfMergeGroupOptions[event.field].value = event.value;
         this.state.tfMergeGroupOptions = this.tfMergeGroupOptions = newTfMergeGroupOptions;
+
+        const newValue = get(this.state.task, event.field);
+        console.log(`Field '${event.field}' changed from '${oldValue}' to '${newValue}'.`);
     }
 
     private buildTfMergeGroupOptions(

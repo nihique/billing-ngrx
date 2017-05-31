@@ -2,5 +2,6 @@
     class="form-control"
     [placeholder]="options.label"
     [value]="options.value"
+    (change)="change($event.target.value)"
     (blur)="blur()"
 >
