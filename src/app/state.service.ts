@@ -1,13 +1,13 @@
 import { BillingApiClient } from 'app/common/billing-api-client.service';
-import { IBillingConfiguration } from 'app/model/billing-configuration';
+import { IBillingConfiguration } from 'app/model/billing-configuration.model';
 import { Injectable } from '@angular/core';
-import { IWorkflow } from 'app/model/worfklow';
-import { IWorkflowStep } from 'app/model/workflow-step';
-import { IQueue } from 'app/model/queue';
+import { IWorkflow } from 'app/model/worfklow.model';
+import { IWorkflowStep } from 'app/model/workflow-step.model';
+import { IQueue } from 'app/model/queue.model';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/mergeMap';
-import { ILookups } from 'app/model/lookups';
-import { ITask } from 'app/model/task';
+import { ILookups } from 'app/model/lookups.model';
+import { ITask } from 'app/model/task.model';
 
 
 @Injectable()

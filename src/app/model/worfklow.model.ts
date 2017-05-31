@@ -1,4 +1,4 @@
-import { IWorkflowStep } from 'app/model/workflow-step';
+import { IWorkflowStep } from 'app/model/workflow-step.model';
 
 export interface IWorkflow {
     id: number;

@@ -5,11 +5,11 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import { IBillingConfiguration } from 'app/model/billing-configuration';
-import { IWorkflow } from 'app/model/worfklow';
-import { IQueue } from 'app/model/queue';
-import { ILookups } from 'app/model/lookups';
-import { ITask } from 'app/model/task';
+import { IBillingConfiguration } from 'app/model/billing-configuration.model';
+import { IWorkflow } from 'app/model/worfklow.model';
+import { IQueue } from 'app/model/queue.model';
+import { ILookups } from 'app/model/lookups.model';
+import { ITask } from 'app/model/task.model';
 
 @Injectable()
 export class BillingApiClient {

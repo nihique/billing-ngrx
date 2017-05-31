@@ -9,8 +9,6 @@ import { TaskToolbarComponent } from './task/task-toolbar/task-toolbar.component
 import { BillingZoneShellComponent } from './config/billing-zones/billing-zone-shell/billing-zone-shell.component';
 import { BillingZoneListComponent } from './config/billing-zones/billing-zone-list/billing-zone-list.component';
 import { BillingZoneDetailComponent } from './config/billing-zones/billing-zone-detail/billing-zone-detail.component';
-import { BreadcrumbComponent } from 'app/common/breadcrumb/breadcrumb.component';
-import { MainToolbarComponent } from 'app/common/main-toolbar/main-toolbar.component';
 import { BillingApiClient } from 'app/common/billing-api-client.service';
 import { TaskShellComponent } from 'app/task/task-shell.component';
 import { TfTaskComponent } from 'app/task/tf-task/tf-task.component';
@@ -27,15 +25,21 @@ import { TfTransportDetailComponent } from 'app/task/tf-transport-detail/tf-tran
 import { TfLocationComponent } from 'app/task/tf-location/tf-location.component';
 import { TfHipaaComponent } from 'app/task/tf-hipaa/tf-hipaa.component';
 import { TfWorksetComponent } from 'app/task/tf-workset/tf-workset.component';
+import { ShellModule } from 'app/shell/shell.module';
 
 @NgModule({
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule,
+        ShellModule,
+    ],
+    exports: [
+    ],
     declarations: [
         // App
         AppComponent,
-
-        // Shell
-        ShellComponent,
-        BreadcrumbComponent,
 
         // Queue Feature
         QueueShellComponent,
@@ -61,18 +65,13 @@ import { TfWorksetComponent } from 'app/task/tf-workset/tf-workset.component';
         BillingZoneShellComponent,
         BillingZoneListComponent,
         BillingZoneDetailComponent,
-        MainToolbarComponent,
-    ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        AppRoutingModule
     ],
     providers: [
         State,
         BillingApiClient,
     ],
-    bootstrap: [AppComponent],
+    bootstrap: [
+        AppComponent
+    ],
 })
 export class AppModule { }

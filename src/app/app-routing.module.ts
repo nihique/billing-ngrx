@@ -5,7 +5,6 @@ import { TaskShellComponent } from 'app/task/task-shell.component';
 import { BillingZoneShellComponent } from 'app/config/billing-zones/billing-zone-shell/billing-zone-shell.component';
 import { QueueShellResolve } from 'app/queue/queue-shell-resolve.service';
 import { ShellComponent } from 'app/shell/shell.component';
-import { ShellResolve } from 'app/shell/shell-resolve.service';
 import { TaskShellResolve } from 'app/task/shell-resolve.service';
 
 const routes: Routes = [
@@ -14,34 +13,12 @@ const routes: Routes = [
         redirectTo: 'shell/queue',
         pathMatch: 'full'
     },
-    {
-        path: 'shell',
-        component: ShellComponent,
-        resolve: { state: ShellResolve },
-        children: [
-            {
-                path: 'queue',
-                component: QueueShellComponent,
-                resolve: { state: QueueShellResolve },
-            },
-            {
-                path: 'task/:taskId',
-                component: TaskShellComponent,
-                resolve: { state: TaskShellResolve }
-            },
-            {
-                path: 'config/billing-zones',
-                component: BillingZoneShellComponent,
-            },
-        ],
-    }
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
     providers: [
-        ShellResolve,
         QueueShellResolve,
         TaskShellResolve
     ]
