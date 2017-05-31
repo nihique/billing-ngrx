@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 import { Dictionary } from 'lodash';
 import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options.model';
 
@@ -9,4 +9,12 @@ import { ITfMergeGroupOptions } from 'app/model/tf-merge-group-options.model';
 })
 export class TfMergeGroupInputComponent {
     @Input() options: ITfMergeGroupOptions;
+    @Output() fieldChanged = new EventEmitter();
+
+    blur() {
+        this.fieldChanged.emit({
+            field: this.options.field,
+            value: this.options.value,
+        });
+    }
 }

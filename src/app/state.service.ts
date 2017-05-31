@@ -1,13 +1,15 @@
-import { BillingApiClient } from 'app/common/billing-api-client.service';
-import { IBillingConfiguration } from 'app/model/billing-configuration.model';
+import { BillingApiClient } from './common/billing-api-client.service';
+import { IBillingConfiguration } from './model/billing-configuration.model';
 import { Injectable } from '@angular/core';
-import { IWorkflow } from 'app/model/worfklow.model';
-import { IWorkflowStep } from 'app/model/workflow-step.model';
-import { IQueue } from 'app/model/queue.model';
+import { IWorkflow } from './model/worfklow.model';
+import { IWorkflowStep } from './model/workflow-step.model';
+import { IQueue } from './model/queue.model';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/mergeMap';
-import { ILookups } from 'app/model/lookups.model';
-import { ITask } from 'app/model/task.model';
+import { ILookups } from './model/lookups.model';
+import { ITask } from './model/task.model';
+import { Dictionary } from 'lodash';
+import { ITfMergeGroupOptions } from './model/tf-merge-group-options.model';
 
 
 @Injectable()
@@ -19,6 +21,7 @@ export class State {
     queues: Array<IQueue>;
     queue: IQueue;
     task: ITask;
+    tfMergeGroupOptions: Dictionary<ITfMergeGroupOptions>;
 
     constructor(
         private billingApiClient: BillingApiClient

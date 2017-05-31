@@ -3,7 +3,10 @@
         Task
     </div>
     <tf-form>
-        <tf-merge-group [options]="tfMergeGroupOptions['transport.taskTypeId']"></tf-merge-group>
+        <tf-merge-group
+            [options]="tfMergeGroupOptions['transport.taskTypeId']"
+            (fieldChanged)="fieldChanged.emit($event)"
+        ></tf-merge-group>
         <tf-merge-group [options]="tfMergeGroupOptions['statusId']"></tf-merge-group>
         <tf-merge-group [options]="tfMergeGroupOptions['narrative']"></tf-merge-group>
         <tf-merge-group [options]="tfMergeGroupOptions['icd10Code01']"></tf-merge-group>

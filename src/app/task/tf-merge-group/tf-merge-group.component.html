@@ -20,7 +20,10 @@
         </label>
 
         <div class="col-sm-9">
-            <tf-merge-group-input [options]="options"></tf-merge-group-input>
+            <tf-merge-group-input
+                [options]="options"
+                (fieldChanged)="fieldChanged.emit($event)"
+            ></tf-merge-group-input>
 
             <button
                 ng-if="::$ctrl.editModalName !== undefined && !$ctrl.isInConfigMode"
